@@ -142,7 +142,7 @@
 <h1 id="概要"><a class="header" href="#概要">概要</a></h1>
 <p>我们在通过ros控制实体机器人时，免不了要跟真实的硬件打交道，这里的代码存放了与下位机通信的协议，对下位机的imu封装，对下位机底盘的运动学封装，对下位机里程计的封装。</p>
 <p>这些功能包的依赖关系如下，</p>
-<pre><code class="language-mermaid">graph TD;
+<pre class="mermaid">graph TD;
     A[sit_protocol_msgs]
     B[sit_protocol]
     C[sit_chassis]
@@ -154,7 +154,7 @@
     B--&gt;D
     C--&gt;E
     D--&gt;E
-</code></pre>
+</pre>
 <h2 id="sit_protocol_msgs"><a class="header" href="#sit_protocol_msgs">sit_protocol_msgs</a></h2>
 <p>该功能包为一切与硬件通信的协议消息基石</p>
 <p>规定机器人下位机与上位机之间任何消息传递均以数据帧为单位，对于任何ros层封装的硬件驱动，必须遵循此协议消息包进行封装。</p>
