@@ -146,11 +146,19 @@
                         <h2 id="编写本书的原因"><a class="header" href="#编写本书的原因">编写本书的原因</a></h2>
 <p>        本书整理总结了2020年底到2021年底关于上海应用技术大学机器人爱好者协会的所有机器人技术成果，考虑后续的传承，故编写本书。希望后人的经验与成果也记录在本书中。本书将能够永远地保持更新下去，使传承不断，社团发展能够越来越好。</p>
 <div style="break-before: page; page-break-before: always;"></div><h3 id="rust"><a class="header" href="#rust">Rust</a></h3>
+<p>        由于本书基于由Rust编写的mdbook静态页面生成框架生成而成，故需要安装Rust编译环境。</p>
+<p>https://rustup.rs/</p>
 <h3 id="mdbook"><a class="header" href="#mdbook">mdbook</a></h3>
+<p>        mdbook的安装教程</p>
+<p><a href="https://rust-lang.github.io/mdBook/guide/installation.html">Installation - mdBook Documentation</a></p>
 <h3 id="git工具"><a class="header" href="#git工具">Git工具</a></h3>
+<p>        直接<code>sudo apt install git</code></p>
 <h3 id="marktext"><a class="header" href="#marktext">Marktext</a></h3>
+<p>        所见即所得的markdown文档编辑器，以前推荐Typora，后来Typora收费了，推荐大家使用开源的markdown编辑器</p>
 <h3 id="vscode"><a class="header" href="#vscode">VSCode</a></h3>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h2 id="运行环境"><a class="header" href="#运行环境">运行环境</a></h2>
+<p>        虽然为本书贡献基本不需要写代码，但是通过vscode管理mdbook的配置文件，作为可视化的git工具还是很好用的。</p>
+<div style="break-before: page; page-break-before: always;"></div><p>这里总结了一系列开发须知与经验</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="运行环境"><a class="header" href="#运行环境">运行环境</a></h2>
 <p>操作系统: Ubuntu20.04</p>
 <p>ROS版本: 使用与 Ubuntu 20.04 配套的 ROS 的 Noetic 版本。</p>
 <p>        ROS Noetic与之前的版本最大的一个不同就是其Python环境的变更，在ROS melodic,kinetic 及更早的版本，使用的是 Python2.7 的运行环境，而 Noetic 原生完美支持 Python3.8 的运行环境，给我们的机器人开发带来了非常先进的 Python 开发体验。而 C++ 层面的变更到不大，基本可以兼容以前的代码。</p>
