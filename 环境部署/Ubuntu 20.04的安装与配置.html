@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ubuntu20.04的安装与配置 - 上应大机协之书</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../关于本书/index.html"><strong aria-hidden="true">1.</strong> 关于本书</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../关于本书/参与贡献.html"><strong aria-hidden="true">1.1.</strong> 参与贡献</a></li></ol></li><li class="chapter-item expanded "><a href="../开发须知/index.html"><strong aria-hidden="true">2.</strong> 开发须知</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../开发须知/运行环境.html"><strong aria-hidden="true">2.1.</strong> 运行环境</a></li><li class="chapter-item expanded "><a href="../开发须知/开发工具.html"><strong aria-hidden="true">2.2.</strong> 开发工具</a></li><li class="chapter-item expanded "><a href="../开发须知/学习资源.html"><strong aria-hidden="true">2.3.</strong> 学习资源</a></li><li class="chapter-item expanded "><a href="../开发须知/其他经验.html"><strong aria-hidden="true">2.4.</strong> 其他经验</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> 环境搭建</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../环境部署/Ubuntu 20.04的安装与配置.html" class="active"><strong aria-hidden="true">3.1.</strong> Ubuntu20.04的安装与配置</a></li><li class="chapter-item expanded "><a href="../环境部署/ROS noetic 的安装.html"><strong aria-hidden="true">3.2.</strong> ROS-noetic的安装</a></li><li class="chapter-item expanded "><a href="../环境部署/ROS 开发环境的搭建.html"><strong aria-hidden="true">3.3.</strong> ROS开发环境的搭建</a></li><li class="chapter-item expanded "><a href="../环境部署/启动激光雷达节点.html"><strong aria-hidden="true">3.4.</strong> 启动激光雷达节点</a></li><li class="chapter-item expanded "><a href="../环境部署/启动机器人硬件.html"><strong aria-hidden="true">3.5.</strong> 启动机器人硬件</a></li><li class="chapter-item expanded "><a href="../环境部署/启动机器人常用工具.html"><strong aria-hidden="true">3.6.</strong> 启动机器人常用工具</a></li></ol></li><li class="chapter-item expanded "><a href="../硬件层/index.html"><strong aria-hidden="true">4.</strong> 硬件层</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../硬件层/硬件驱动协议.html"><strong aria-hidden="true">4.1.</strong> ROS层硬件驱动协议</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> 上下位机通信协议</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> 下位机代码详解</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> IMU封装</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> 机器人底盘</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.1.</strong> 底盘运动学讲解</div></li><li class="chapter-item expanded "><a href="../硬件层/机器人底盘/底盘封装.html"><strong aria-hidden="true">4.5.2.</strong> 底盘封装</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.6.</strong> 里程计封装</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> 机器人导航</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> 计算机视觉</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> 机器人语音</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Respeaker方案</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.2.</strong> Android手机方案</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> 机器人仿真</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> 机械臂</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> 篮球机器人</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> 电磁炮</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> 起落架</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.</strong> 运动</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.1.</strong> 定位</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.2.</strong> 地图</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.3.</strong> 导航</div></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> 常用工具</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">11.1.</strong> 移动端控制网关</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.2.</strong> 位姿调试服务器</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.3.</strong> Qt小工具</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.4.</strong> 机器人键盘遥控</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.5.</strong> 机器人轮速转发调试器</div></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">上应大机协之书</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="虚拟机安装"><a class="header" href="#虚拟机安装">虚拟机安装</a></h1>
+<p>如果你仍在学习过程中，建议使用虚拟机的方式安装，虚拟机方式的安装与实体机安装大同小异
+建议参考如下文章进行安装
+http://www.autolabor.com.cn/book/ROSTutorials/chapter1/12-roskai-fa-gong-ju-an-zhuang.html</p>
+<h1 id="实体机安装"><a class="header" href="#实体机安装">实体机安装</a></h1>
+<p>一个真正的机器人运行时需要在实体机安装。
+可以参考如下文字
+https://blog.csdn.net/m0_60190682/article/details/118723468
+也可以使用搜索引擎搜索&quot;u盘安装 ubuntu20.04&quot;</p>
+<h1 id="安装建议"><a class="header" href="#安装建议">安装建议</a></h1>
+<p>安装界面大概如下图所示，</p>
+<p><img src="Ubuntu%2020.04%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/2022-09-18-03-23-50-image.png" alt="" /></p>
+<ol>
+<li>
+<p>建议安装之前先断网，否则安装过程可能会自动更新，而未换源之前更新将直接连接国外服务器，会导致安装进度巨慢无比。建议断网安装结束后，进系统后手动换源后手动更新。</p>
+</li>
+<li>
+<p>建议安装使用英文界面，不过Linux下中文不会像Windows那样轻易出现乱码情况（统一UTF-8编码），但是在纯终端界面下将会出现中文方块的情况。</p>
+</li>
+</ol>
+<h1 id="虚拟机增强工具"><a class="header" href="#虚拟机增强工具">虚拟机增强工具</a></h1>
+<blockquote>
+<p>PS: 该内容仅虚拟机安装的用户需要关注。</p>
+</blockquote>
+<p>当我们安装完虚拟机后，通过安装虚拟机增强工具可以使得虚拟机与物理机进行方便地交互。</p>
+<p>如果我们使用的是VMware虚拟机，那么我们可进行如下操作，</p>
+<p><img src="Ubuntu%2020.04%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/2022-09-18-03-37-06-image.png" alt="" /></p>
+<p>然后我们发现出现了一个光盘设备，在此处打开终端</p>
+<p><img src="Ubuntu%2020.04%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/2022-09-18-03-38-23-image.png" alt="" /></p>
+<p><a href="https://docs.vmware.com/cn/VMware-Workstation-Pro/16.0/com.vmware.ws.using.doc/GUID-08BB9465-D40A-4E16-9E15-8C016CC8166F.html">在 Linux 虚拟机中手动安装 VMware Tools</a></p>
+<p><img src="Ubuntu%2020.04%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/2022-09-18-03-46-22-image.png" alt="" /></p>
+<p>当提示上述信息时，增强工具便安装成功，然后可以输入<code>reboot</code>命令重启电脑。</p>
+<p>重启之后你会发现虚拟机的分辨率将会随着虚拟机窗口而进行缩放，剪切板也可相互共享，大大提高的虚拟机的便捷性。</p>
+<h1 id="系统更新"><a class="header" href="#系统更新">系统更新</a></h1>
+<p>断网安装完系统之后，就可以联网了。</p>
+<blockquote>
+<p>由于现在Ubuntu 22.04已发布，可能会弹窗提示升级Ubuntu 22.04，请不要升级，因为后面我们需要安装的ROS1 的noetic发行版是需要绑定Ubuntu 20.04的发行版的。</p>
+</blockquote>
+<p>需要先更换国内源，可以参考以下清华源或科大源的文档。</p>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">ubuntu | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p>
+<p><a href="https://mirrors.ustc.edu.cn/help/ubuntu.html">Ubuntu 源使用帮助 — USTC Mirror Help 文档</a></p>
+<p>更换国内源后便可通过以下命令更新apt源</p>
+<pre><code class="language-shell">sudo apt update
+</code></pre>
+<p>再运行以下命令执行系统软件包更新</p>
+<pre><code class="language-shell">sudo apt upgrade -y
+</code></pre>
+<p><img src="Ubuntu%2020.04%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/2022-09-18-03-55-00-image.png" alt="" /></p>
+<p>更新完毕</p>
+<h1 id="中文输入法"><a class="header" href="#中文输入法">中文输入法</a></h1>
+<p>中文输入法很有用，不管是写代码注释还是上网搜索均需要使用到中午输入。</p>
+<p>如果你安装的是中文ubuntu，则已经会自带一个中文输入法；如果你安装的是英文ubuntu，则不会自带中文输入法。</p>
+<p>不过，系统自带的中文输入法个人感觉较为难用。在此推荐安装使用搜狗输入法。</p>
+<p><a href="https://shurufa.sogou.com/linux">搜狗输入法linux-首页</a></p>
+<p>官网已有详细的安装说明，再次不展开赘述。(需要严格执行官方帮助中的每一条命令，如果输入法还是无法正常使用，请再次重复执行)</p>
+<p>将搜狗输入法加入输入法列表中。</p>
+<p><img src="Ubuntu%2020.04%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/2022-09-18-04-05-49-image.png" alt="" /></p>
+<p>此时已经能够输入中文了</p>
+<p><img src="Ubuntu%2020.04%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/2022-09-18-04-14-18-image.png" alt="" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../开发须知/其他经验.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../环境部署/ROS noetic 的安装.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../开发须知/其他经验.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../环境部署/ROS noetic 的安装.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../mermaid.min.js"></script>
+        <script type="text/javascript" src="../mermaid-init.js"></script>
+
+
+    </body>
+</html>
