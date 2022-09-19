@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>启动机器人仿真环境 - 上应大机协之书</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../关于本书/index.html"><strong aria-hidden="true">1.</strong> 关于本书</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../关于本书/参与贡献.html"><strong aria-hidden="true">1.1.</strong> 参与贡献</a></li></ol></li><li class="chapter-item expanded "><a href="../开发须知/index.html"><strong aria-hidden="true">2.</strong> 开发须知</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../开发须知/运行环境.html"><strong aria-hidden="true">2.1.</strong> 运行环境</a></li><li class="chapter-item expanded "><a href="../开发须知/开发工具.html"><strong aria-hidden="true">2.2.</strong> 开发工具</a></li><li class="chapter-item expanded "><a href="../开发须知/学习资源.html"><strong aria-hidden="true">2.3.</strong> 学习资源</a></li><li class="chapter-item expanded "><a href="../开发须知/其他经验.html"><strong aria-hidden="true">2.4.</strong> 其他经验</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> 环境搭建</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../环境部署/Ubuntu 20.04的安装与配置.html"><strong aria-hidden="true">3.1.</strong> Ubuntu20.04的安装与配置</a></li><li class="chapter-item expanded "><a href="../环境部署/ROS noetic 的安装.html"><strong aria-hidden="true">3.2.</strong> ROS-noetic的安装</a></li><li class="chapter-item expanded "><a href="../环境部署/ROS 开发环境的搭建.html"><strong aria-hidden="true">3.3.</strong> ROS开发环境的搭建</a></li><li class="chapter-item expanded "><a href="../环境部署/启动激光雷达节点.html"><strong aria-hidden="true">3.4.</strong> 启动激光雷达节点</a></li><li class="chapter-item expanded "><a href="../环境部署/启动机器人硬件.html"><strong aria-hidden="true">3.5.</strong> 启动机器人硬件</a></li><li class="chapter-item expanded "><a href="../环境部署/启动机器人常用工具.html"><strong aria-hidden="true">3.6.</strong> 启动机器人常用工具</a></li><li class="chapter-item expanded "><a href="../环境部署/启动机器人仿真环境.html" class="active"><strong aria-hidden="true">3.7.</strong> 启动机器人仿真环境</a></li></ol></li><li class="chapter-item expanded "><a href="../硬件层/index.html"><strong aria-hidden="true">4.</strong> 硬件层</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../硬件层/硬件驱动协议.html"><strong aria-hidden="true">4.1.</strong> ROS层硬件驱动协议</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> 上下位机通信协议</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> 下位机代码详解</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> IMU封装</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> 机器人底盘</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.1.</strong> 底盘运动学讲解</div></li><li class="chapter-item expanded "><a href="../硬件层/机器人底盘/底盘封装.html"><strong aria-hidden="true">4.5.2.</strong> 底盘封装</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.6.</strong> 里程计封装</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> 机器人导航</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> 计算机视觉</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> 机器人语音</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Respeaker方案</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.2.</strong> Android手机方案</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> 机器人仿真</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> 机械臂</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> 篮球机器人</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.1.</strong> 电磁炮</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.2.</strong> 起落架</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.</strong> 运动</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.1.</strong> 定位</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.2.</strong> 地图</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.3.3.</strong> 导航</div></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> 常用工具</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">11.1.</strong> 移动端控制网关</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.2.</strong> 位姿调试服务器</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.3.</strong> Qt小工具</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.4.</strong> 机器人键盘遥控</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.5.</strong> 机器人轮速转发调试器</div></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">上应大机协之书</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="建议"><a class="header" href="#建议">建议</a></h1>
+<p>还是建议在完成了下面文章和视频的学习之后再进行本章的学习，如果能完整的学习完该视频与文档，那么本篇文章可能很快就能完成甚至发现文章中的疏漏。</p>
+<p><a href="http://www.autolabor.com.cn/book/ROSTutorials/di-7-zhang-ji-qi-ren-dao-822a28-fang-771f29.html">第 7 章 机器人导航(仿真) · Autolabor-ROS机器人入门课程《ROS理论与实践》零基础教程</a></p>
+<p>还有配套视频</p>
+<p>https://www.bilibili.com/video/BV1Ci4y1L7ZZ</p>
+<p>P229-P328章节</p>
+<p>本人当时学习完这些章节且搭建出自己的机器人仅需一天时间即可完成</p>
+<h1 id="克隆代码"><a class="header" href="#克隆代码">克隆代码</a></h1>
+<pre><code class="language-shell">git clone https://github.com/SIT-Robot/sit-service-robot.git
+git clone https://github.com/SIT-Robot/sit-basketball-robot.git
+</code></pre>
+<h1 id="编译代码"><a class="header" href="#编译代码">编译代码</a></h1>
+<pre><code class="language-shell">catkin_make
+</code></pre>
+<p>有可能报错如下，</p>
+<p><img src="%E5%90%AF%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/2022-09-19-10-19-41-image.png" alt="" /></p>
+<pre><code class="language-shell">sudo apt install ros-noetic-navigation
+sudo apt install ros-noetic-gmapping
+</code></pre>
+<h1 id="启动环境"><a class="header" href="#启动环境">启动环境</a></h1>
+<p>此时启动机器人仿真环境</p>
+<p>可能报错如下，我们需要安装urdf的python插件</p>
+<p><img src="%E5%90%AF%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/2022-09-19-10-30-53-image.png" alt="" /></p>
+<pre><code class="language-shell">sudo apt install ros-noetic-urdfdom-py
+</code></pre>
+<p>再次启动仍可能报错如下，我们需要安装realsense2_description包</p>
+<p><img src="%E5%90%AF%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/2022-09-19-10-45-24-image.png" alt="" /></p>
+<pre><code class="language-shell">sudo apt install ros-noetic-realsense2-description
+</code></pre>
+<p>此时已经成功启动机器人仿真环境，但是可能效果如下，显示异常</p>
+<p><img src="%E5%90%AF%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/2022-09-19-10-47-37-image.png" alt="" /></p>
+<p>使用<code>roslaunch sit_service_description service_robot_viz.launch</code>打开rviz查看</p>
+<p><img src="%E5%90%AF%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/2022-09-19-10-55-48-image.png" alt="" /></p>
+<p>发现似乎是tf全部失效。</p>
+<p>根据以下文章，查看tf树</p>
+<p><a href="http://www.autolabor.com.cn/book/ROSTutorials/di-5-zhang-ji-qi-ren-dao-hang/51-tfzuo-biao-bian-huan/515-zuo-biao-xi-guan-xi-cha-kan.html">5.1.5 坐标系关系查看 · Autolabor-ROS机器人入门课程《ROS理论与实践》零基础教程</a></p>
+<p><img src="%E5%90%AF%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/2022-09-19-10-56-29-image.png" alt="" /></p>
+<p>发现目前仅存在上述tf变换。</p>
+<p>重开几次，有一定几率建立完整tf</p>
+<p><img src="%E5%90%AF%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/2022-09-19-11-08-37-image.png" alt="" /></p>
+<p>此时继续启动service_robot_viz.launch，可发现机器人已经成功加载，并且显示出模型，雷达线等。</p>
+<p><img src="%E5%90%AF%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/2022-09-19-11-11-10-image.png" alt="" /></p>
+<p>如果电脑性能较好，还可尝试订阅深度相机发布的点云消息，</p>
+<p><img src="%E5%90%AF%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/2022-09-19-11-14-03-image.png" alt="" /></p>
+<h1 id="启动键盘控制器"><a class="header" href="#启动键盘控制器">启动键盘控制器</a></h1>
+<p>启动键盘控制器</p>
+<p><code>rosrun sit_teleop teleop.py</code></p>
+<p>即可使用键盘控制rviz中的机器人了。</p>
+<blockquote>
+<p>PS: Gazebo中的场景贴图还是无法正常加载，我也不清楚为何，或许是虚拟机的问题。但是rviz中已经实现了机器人的可视化，并显示周围的环境感知。</p>
+</blockquote>
+<h1 id="slam建图"><a class="header" href="#slam建图">SLAM建图</a></h1>
+<p><code>roslaunch sit_nav gmapping_slam.launch</code> 即可启动slam建图，使用键盘控制机器人运动，即可逐步建立环境地图。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../环境部署/启动机器人常用工具.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../硬件层/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../环境部署/启动机器人常用工具.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../硬件层/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../mermaid.min.js"></script>
+        <script type="text/javascript" src="../mermaid-init.js"></script>
+
+
+    </body>
+</html>
